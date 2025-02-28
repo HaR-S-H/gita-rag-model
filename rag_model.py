@@ -1,25 +1,25 @@
-import pandas as pd
-import numpy as np
+# import pandas as pd
+# import numpy as np
 from sentence_transformers import SentenceTransformer
 from pinecone import Pinecone
-from pinecone import ServerlessSpec
+# from pinecone import ServerlessSpec
 
-import logging
-import sys
+# import logging
+# import sys
 import os
 
 # from google.colab import userdata
 
-import qdrant_client
-from qdrant_client import models
-from llama_index.core import SimpleDirectoryReader
-from llama_index.embeddings.fastembed import FastEmbedEmbedding
+# import qdrant_client
+# from qdrant_client import models
+# from llama_index.core import SimpleDirectoryReader
+# from llama_index.embeddings.fastembed import FastEmbedEmbedding
 from llama_index.llms.groq import Groq # deep seek r1 implementation
 from dotenv import load_dotenv
 
 load_dotenv() 
 # model = SentenceTransformer('all-MiniLM-L6-v2')
-model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
+model = SentenceTransformer('intfloat/e5-small-v2')
 
  # Load .env variables
 
@@ -66,7 +66,7 @@ similar_verses = query_verse(query, k=5)
 #     print(f"Similarity Score: {verse['similarity_score']}\n")
 
 
-llm = Groq(model="gemma-2b-it")
+llm = Groq(model="deepseek-coder-1.3b")
 
 
 from llama_index.core import ChatPromptTemplate
