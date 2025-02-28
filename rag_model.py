@@ -15,13 +15,13 @@ from qdrant_client import models
 from llama_index.core import SimpleDirectoryReader
 from llama_index.embeddings.fastembed import FastEmbedEmbedding
 from llama_index.llms.groq import Groq # deep seek r1 implementation
+from dotenv import load_dotenv
 
+load_dotenv() 
 # model = SentenceTransformer('all-MiniLM-L6-v2')
 model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
 
-from dotenv import load_dotenv
-
-load_dotenv()  # Load .env variables
+ # Load .env variables
 
 GROQ_API_KEY = os.getenv("GROQ_API_KEY")
 PINECONE_API_KEY = os.getenv("PINECONE_API_KEY")

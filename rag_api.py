@@ -1,6 +1,10 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import uvicorn
+import os
+from dotenv import load_dotenv
+
+load_dotenv()
 from rag_model import pipeline  # Import your RAG function
 
 app = FastAPI()
@@ -14,4 +18,5 @@ def get_rag_response(request: QueryRequest):
     return {"response": response}
 
 if __name__ == "__main__":
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    port=int(os.getenv("PORT"))
+    uvicorn.run(app, host="0.0.0.0", port=port)
