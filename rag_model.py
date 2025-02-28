@@ -19,7 +19,8 @@ from dotenv import load_dotenv
 
 load_dotenv() 
 # model = SentenceTransformer('all-MiniLM-L6-v2')
-model = SentenceTransformer('intfloat/e5-small-v2')
+# model = SentenceTransformer('intfloat/e5-small-v2')
+model = SentenceTransformer('jinaai/jina-embeddings-v2-small')
 
  # Load .env variables
 
@@ -33,7 +34,7 @@ index_name = "bhagwat-gita"
 index = pc.Index(index_name)
 
 
-def query_verse(query, k=5):
+def query_verse(query, k=3):
     # Generate embedding for the query
     query_embedding = model.encode([query])[0]  # Single query embedding
 
@@ -66,7 +67,7 @@ similar_verses = query_verse(query, k=5)
 #     print(f"Similarity Score: {verse['similarity_score']}\n")
 
 
-llm = Groq(model="deepseek-coder-1.3b")
+llm = Groq(model="tinydolphin-1.1b")
 
 
 from llama_index.core import ChatPromptTemplate

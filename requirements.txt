@@ -7,3 +7,4 @@ llama-index-vector-stores-qdrant
 # llama-index-embeddings-fastembed
 llama-index-readers-file
 llama-index-llms-groq
+python-dotenv
