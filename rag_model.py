@@ -16,7 +16,8 @@ from llama_index.core import SimpleDirectoryReader
 from llama_index.embeddings.fastembed import FastEmbedEmbedding
 from llama_index.llms.groq import Groq # deep seek r1 implementation
 
-model = SentenceTransformer('all-MiniLM-L6-v2')
+# model = SentenceTransformer('all-MiniLM-L6-v2')
+model = SentenceTransformer('paraphrase-MiniLM-L3-v2')
 
 from dotenv import load_dotenv
 
@@ -65,7 +66,7 @@ similar_verses = query_verse(query, k=5)
 #     print(f"Similarity Score: {verse['similarity_score']}\n")
 
 
-llm = Groq(model="deepseek-r1-distill-llama-70b")
+llm = Groq(model="gemma-2b-it")
 
 
 from llama_index.core import ChatPromptTemplate
