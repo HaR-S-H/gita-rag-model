@@ -19,7 +19,7 @@ from dotenv import load_dotenv
 
 load_dotenv() 
 # model = SentenceTransformer('all-MiniLM-L6-v2')
-model = SentenceTransformer('intfloat/e5-small-v2')
+model = SentenceTransformer('all-MiniLM-L6-v2')
 
  # Load .env variables
 
@@ -66,7 +66,7 @@ similar_verses = query_verse(query, k=5)
 #     print(f"Similarity Score: {verse['similarity_score']}\n")
 
 
-llm = Groq(model="deepseek-coder-1.3b")
+llm = Groq(model="deepseek-r1-distill-llama-70b")
 
 
 from llama_index.core import ChatPromptTemplate
