@@ -18,6 +18,6 @@ def get_rag_response(request: QueryRequest):
     return {"response": response}
 
 if __name__ == "__main__":
-    port=int(os.getenv("PORT",8000))
+    port=int(os.getenv("PORT",7860))
     print(f"Running on PORT:{port}")
     uvicorn.run(app, host="0.0.0.0", port=port)
